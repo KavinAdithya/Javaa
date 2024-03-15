@@ -16,6 +16,7 @@ class WorkSpace{
         System.out.println("Your Name is "+name+" And Your Age is "+age);
         System.out.println("May I Right??? ");
         long end=System.currentTimeMillis();
+        scan.close();
         //Using BufferedReader class
         try{
             BufferedReader scan1=new BufferedReader(new InputStreamReader(System.in));
