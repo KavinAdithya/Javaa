@@ -22,9 +22,7 @@ public class MergeTwoArray {
         return nums1;
     }
     public int[] mergeLearnAnswer(int[] nums,int m,int[] nums1,int n){
-        for(int k=0;k<n;k++){
-            nums[k+m]=nums1[k];
-        }
+        if (n >= 0) System.arraycopy(nums1, 0, nums, 0 + m, n);
         Arrays.sort(nums);
         for(int nn:nums){
             System.out.println(nn);
