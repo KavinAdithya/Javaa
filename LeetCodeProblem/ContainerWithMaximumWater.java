@@ -50,9 +50,24 @@ public class ContainerWithMaximumWater {
         return maxAnswer;
     }
     public static void main(String[] args){
-        int[] array={1,8,6,2,5,4,8,3,7};
-        int[] ar={3,2,3};
-        System.out.println(container(array));
-        System.out.println(Solution1.max(ar));
+        int[] array={1,8,6,2,9,5,4,8,3,7};
+      //  int[] ar={3,2,3};
+        System.out.println(Arrays.toString(array));
+        swapTheArray(array);
+        System.out.println(Arrays.toString(array));
+//        System.out.println(container(array));
+//        System.out.println(Solution1.max(ar));
+    }
+
+    private static void swapTheArray(int[] array) {
+        int front=0;
+        int back=array.length-1;
+        while(front<back){
+            int temp=array[front];
+            array[front]=array[back];
+            array[back]=temp;
+            front++;
+            back--;
+        }
     }
 }
