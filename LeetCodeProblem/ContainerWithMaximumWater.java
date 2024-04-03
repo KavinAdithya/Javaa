@@ -1,5 +1,6 @@
 package LeetCodeProblem;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 class Solution1{
@@ -52,11 +53,21 @@ public class ContainerWithMaximumWater {
     public static void main(String[] args){
         int[] array={1,8,6,2,9,5,4,8,3,7};
       //  int[] ar={3,2,3};
-        System.out.println(Arrays.toString(array));
-        swapTheArray(array);
-        System.out.println(Arrays.toString(array));
+
+
+//        System.out.println(Arrays.toString(array));
+//        swapTheArray(array);
+//        System.out.println(Arrays.toString(array));
+
+
 //        System.out.println(container(array));
 //        System.out.println(Solution1.max(ar));
+
+        ArrayList<Integer> list=new ArrayList();
+
+        for(Integer k : list){
+            System.out.println(k);
+        }
     }
 
     private static void swapTheArray(int[] array) {
