@@ -4,10 +4,15 @@ public class Main {
 
     //Its A Driver For All Classes in this project
     public static void main(String[] args) {
-        System.out.println("Hello Techiess!!!");
-
-        Threads thread=new Threads();
-        thread.start();
+//        System.out.println("Hello Techiess!!!");
+//
+//        Threads thread=new Threads();
+//        thread.start();
+        double d=1.99;
+        float fll=Float.parseFloat("1.89");
+        float flll=(float)d;
+        float fl=1.89f;
+        System.out.println(flll);
 
 
 //        try{
