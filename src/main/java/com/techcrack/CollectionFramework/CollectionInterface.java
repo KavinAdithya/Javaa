@@ -16,29 +16,48 @@ public class CollectionInterface {
             fruit = scanner.nextLine();
         }while(fruit.compareToIgnoreCase("end" ) != 0);
 
-        System.out.println(fruits);
+//        System.out.println(fruits);
+//
+//        System.out.println("Banana is " + fruits.contains("Banana"));
+//
+//        System.out.println(fruits.size());
+//
+//        System.out.print("Enter the object to be deleted : ");
+//        String remove = scanner.nextLine();
+//
+//        System.out.println(fruits);
+//
+//        System.out.println("After Removing banana : " + fruits.remove(remove));
+//
+//        System.out.println(fruits);
+//
+//        System.out.println(fruits.isEmpty());
 
-        System.out.println("Banana is " + fruits.contains("Banana"));
+//        for(String name : fruits.toArray(new String[0])){
+//            System.out.println(name);
+//        }
+//
+//        fruits.clear();
+//
+//        System.out.println(fruits);
 
-        System.out.println(fruits.size());
 
-        System.out.print("Enter the object to be deleted : ");
-        String remove = scanner.nextLine();
+        System.out.println("Enter the Second Group Details : ");
+        Collection<String>  fruits2 = new ArrayList<>();
 
-        System.out.println(fruits);
+        String fruit1 = scanner.nextLine();
+        do{
+            fruits2.add(fruit1);
+            fruit1 = scanner.nextLine();
 
-        System.out.println("After Removing banana : " + fruits.remove(remove));
+        }while(!fruit1.equalsIgnoreCase("end"));
 
-        System.out.println(fruits);
+        System.out.println("Add All : " + fruits2.addAll(fruits));
 
-        System.out.println(fruits.isEmpty());
+        System.out.println("Contains All : " + fruits2.containsAll(fruits));
 
-        for(Object name : fruits.<String>toArray()){
+        System.out.println(fruits2 + " \nRetains All : " + fruits2.retainAll(fruits) + " \n" + fruits2);
 
-        }
-
-        fruits.clear();
-
-        System.out.println(fruits);
+        System.out.println("Remove All : " + fruits2.removeAll(fruits) + " \n"  + fruits2);
     }
 }
