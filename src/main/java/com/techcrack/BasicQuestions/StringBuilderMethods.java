@@ -1,4 +1,4 @@
-package com.techcrack;
+package com.techcrack.BasicQuestions;
 
 public class StringBuilderMethods {
     public static void main(String[] args){

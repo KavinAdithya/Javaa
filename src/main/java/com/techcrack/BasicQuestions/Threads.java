@@ -1,4 +1,4 @@
-package com.techcrack;
+package com.techcrack.BasicQuestions;
 
 import java.util.Scanner;
 public class Threads extends Thread {
