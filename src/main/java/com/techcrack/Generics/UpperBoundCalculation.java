@@ -32,6 +32,6 @@ public class UpperBoundCalculation {
         List<Double> listOfDouble = Arrays.asList(12894.90, 547839.90, 537940.90, 35374.678);
 
         System.out.printf("Average Salary of the Integer is : %d\n" , (int) calculateAverageSalary(listOfInteger));
-        System.out.printf("Average Salary of the double is : %.2f " , calculateAverageSalary(listOfDouble));
+       // System.out.printf("Average Salary of the double is : %.2f " , calculateAverageSalary(listOfDouble));
     }
 }
