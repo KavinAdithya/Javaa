@@ -92,4 +92,16 @@ public class Magazine extends LibraryItem<Magazine> {
     public void setMagazineEditorName(String magazineEditorName) {
         this.magazineEditorName = magazineEditorName;
     }
+
+    // Overriding the magazine
+    @Override
+    public String toString() {
+        return "Magazine{" +
+                "title='" + title + '\'' +
+                ", issueNumber=" + issueNumber +
+                ", publicationMonth='" + publicationMonth + '\'' +
+                ", publicationYear='" + publicationYear + '\'' +
+                ", magazineEditorName='" + magazineEditorName + '\'' +
+                '}';
+    }
 }

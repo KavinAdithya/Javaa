@@ -10,6 +10,8 @@ package com.techcrack.Generics;
 */
 
 
+import java.util.Objects;
+
 public class LibraryItem<T> {
 
     // id for identifying the item uniquely
@@ -47,5 +49,31 @@ public class LibraryItem<T> {
     // @param Updating the description of the item
     public void setDescription(String description) {
         this.description = description;
+    }
+
+
+    // Checking the object is equal or not
+    // default Method has been override
+    // @param another object where we use for comparisons
+    // @return returns true if the objects are equal
+    @Override
+    public boolean equals(Object o) {
+        // Checking the object references of this object and another object is the same.
+        if (this == o)
+            return true;
+
+        // Checking the object is instanced of LibraryItem Class
+        if (!(o instanceof LibraryItem<?> that))
+            return false;
+
+        // Checking the object states are equal
+        return getId() == that.getId() && Objects.equals(getDescription(), that.getDescription());
+    }
+
+
+    // Overriding the Hashcode to avoid using the duplicates
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getDescription());
     }
 }

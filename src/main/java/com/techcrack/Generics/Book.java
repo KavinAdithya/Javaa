@@ -85,4 +85,17 @@ public class Book extends LibraryItem<Book>{
     public void setGenre(String genre) {
         this.genre = genre;
     }
+
+
+    // Overriding the toString method
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", publicationYear='" + publicationYear + '\'' +
+                ", genre='" + genre + '\'' +
+                '}';
+    }
 }
