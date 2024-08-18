@@ -1,5 +1,8 @@
 package com.techcrack.InterfaceConcept;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 /*
        * This class is used to manipulate the Contractor salary;
        * calculateSalary() -> Method Calculate the salary of the Contractor based on his working hours.
@@ -20,6 +23,118 @@ public class Contractor implements Payable, Reportable, Workable{
 
     // Stores the Contractor is active or not.
     private boolean active = false;
+
+    // Name of the employee
+    private String name;
+
+    // Employee ID
+    private int employeeId;
+
+    // Annual Salary of the employee
+    private double annualSalary;
+
+    // Department of the employee
+    private String department;
+
+    // Position of the employee
+    private String position;
+
+    // Employee Hired date.
+    private LocalDate hireDate;
+
+    // Is Currently employee working or not?
+    private boolean workingCurrently;
+
+    // Employee Joined Time
+    private LocalTime startTime;
+
+    // Employee leaving time
+    private LocalTime endTime;
+
+    public Contractor(double hourlyRate, double hoursWorked, String name, int employeeId, double annualSalary, String department, String position,  boolean workingCurrently ) {
+        this.hourlyRate = hourlyRate;
+        this.hoursWorked = hoursWorked;
+        this.name = name;
+        this.employeeId = employeeId;
+        this.annualSalary = annualSalary;
+        this.department = department;
+        this.position = position;
+
+        this.workingCurrently = workingCurrently;
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public double getAnnualSalary() {
+        return annualSalary;
+    }
+
+    public void setAnnualSalary(double annualSalary) {
+        this.annualSalary = annualSalary;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public LocalDate getHireDate() {
+        return hireDate;
+    }
+
+    public void setHireDate(LocalDate hireDate) {
+        this.hireDate = hireDate;
+    }
+
+    public boolean isWorkingCurrently() {
+        return workingCurrently;
+    }
+
+    public void setWorkingCurrently(boolean workingCurrently) {
+        this.workingCurrently = workingCurrently;
+    }
+
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime() {
+        this.startTime = LocalTime.now();
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime() {
+        this.endTime = LocalTime.now();
+    }
 
     // Override the method from the Payable interface.
     // Generates salary based on the hours worked.
@@ -105,5 +220,7 @@ public class Contractor implements Payable, Reportable, Workable{
         else
             System.out.println("Contractor is not active Now....");
     }
+
+
 
 }
