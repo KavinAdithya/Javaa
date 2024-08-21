@@ -14,8 +14,8 @@ public interface Payable {
     // @param A payable interface object is required based on that it will calculate the salary.
 
     static void generateSlip(Payable payable) {
-        System.out.println(" Total Salary That the Employee" +
-                " Earned for previous 5 year is " + payable.calculateSalary());
+        System.out.println("Total Salary That the Employee" +
+                " aEarned for previous 5 year is " + payable.calculateSalary());
     }
 
     // default method to access validating signature method.

@@ -5,7 +5,7 @@ public interface Reportable {
 
     default void sendReport() {
         System.out.println("The Performance of the Employee is too good. " +
-                "\n But The workers put more effect which increases potential.");
+                "\nBut The workers put more effect which increases potential.");
     }
 
 }

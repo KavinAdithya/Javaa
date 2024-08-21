@@ -43,7 +43,7 @@ public class FullTimeEmployee implements Payable, Reportable, Workable{
     private double workHours;
 
     // Parameterized Constructor for initializing the instance state during Object creation.
-    public FullTimeEmployee(String name, int employeeId, double annualSalary, String department, String position,  boolean workingCurrently, double hourlyPay) {
+    public FullTimeEmployee(String name, int employeeId, double annualSalary, String department, String position,  boolean workingCurrently, double hourlyPay, double workHours) {
         this.name = name;
         this.employeeId = employeeId;
         this.annualSalary = annualSalary;
@@ -51,6 +51,7 @@ public class FullTimeEmployee implements Payable, Reportable, Workable{
         this.position = position;
         this.workingCurrently = workingCurrently;
         this.hourlyPay = hourlyPay;
+        this.workHours = workHours;
 
         // Setting the initial time of the employee during object creation;
         startWork();
@@ -213,18 +214,18 @@ public class FullTimeEmployee implements Payable, Reportable, Workable{
     // Printing the instances state when the object is printed.
     @Override
     public String toString() {
-        return "FullTimeEmployee{" +
-                "name='" + name + '\'' +
-                ", employeeId=" + employeeId +
-                ", annualSalary=" + annualSalary +
-                ", department='" + department + '\'' +
-                ", position='" + position + '\'' +
-                ", hireDate=" + hireDate +
-                ", workingCurrently=" + workingCurrently +
-                ", startTime=" + startTime +
-                ", endTime=" + endTime +
-                ", hourlyPay=" + hourlyPay +
-                ", workHours=" + workHours +
-                '}';
+        return "FullTimeEmployee\n{" +
+                "\n\tname = '" + name + '\'' +
+                "\n\temployeeId = " + employeeId +
+                "\n\tannualSalary = " + annualSalary +
+                "\n\tdepartment = '" + department + '\'' +
+                "\n\tposition = '" + position + '\'' +
+                "\n\thireDate = " + hireDate +
+                "\n\tworkingCurrently = " + workingCurrently +
+                "\n\tstartTime = " + startTime +
+                "\n\tendTime = " + endTime +
+                "\n\thourlyPay = " + hourlyPay +
+                "\n\tworkHours = " + workHours +
+                "\n}";
     }
 }

@@ -32,5 +32,8 @@ public class Aplication {
 
         contractor.generateReport();
 
+        FullTimeEmployee fullTimeEmployee = new FullTimeEmployee("Bujilii", 3, 7500000.00, "IT", "CEO", true, 10000.00, 1000.00);
+
+        fullTimeEmployee.generateReport();
     }
 }
