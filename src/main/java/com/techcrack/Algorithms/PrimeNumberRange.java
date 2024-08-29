@@ -1,3 +1,5 @@
+package com.techcrack.Algorithms;
+
 // import java.util.Arrays;
 
 public class PrimeNumberRange {

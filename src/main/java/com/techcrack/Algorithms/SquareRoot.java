@@ -1,3 +1,5 @@
+package com.techcrack.Algorithms;
+
 import java.util.Scanner;
 
 public class SquareRoot {
