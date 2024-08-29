@@ -1,3 +1,5 @@
+package com.techcrack.Algorithms;
+
 public class SquareRootBinarySearch {
     public static double squareRootBinarySearch(double number, double tolerance) {
         if (number < 0) {

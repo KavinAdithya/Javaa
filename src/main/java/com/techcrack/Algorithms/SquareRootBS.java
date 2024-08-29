@@ -1,3 +1,5 @@
+package com.techcrack.Algorithms;
+
 
 
 public class SquareRootBS {

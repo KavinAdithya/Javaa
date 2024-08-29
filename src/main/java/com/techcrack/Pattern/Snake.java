@@ -1,3 +1,5 @@
+package com.techcrack.Pattern;
+
 import java.util.Scanner;
 
 public class Snake {
