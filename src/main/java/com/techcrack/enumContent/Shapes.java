@@ -20,13 +20,29 @@ public class Shapes {
 
         int ap = operation.equals("area") ? - 1 : 1;
 
+        String angle = ap == 1 ? "Perimeter" : "area";
+
+        boolean incorrectShape = false;
+
         double value = switch(sides) {
             case 3 -> triangle(ap);
             case 4 -> squareOrRectangle(ap);
-            case 5 -> 0.0;
-            default -> 0.0;
+            case 5 -> pentagon(ap);
+            case 6 -> hexagon(ap);
+            case 8 -> octagon(ap);
+            default -> {
+                System.out.println("Invalid Shape Try again!!!");
+                incorrectShape = true;
+                yield 0.0;
+            }
 
         };
+
+
+        if (incorrectShape)
+            return;
+
+        System.out.println("Shape You chosen is " + shape + "\n"  + angle + " of a " + shape + " is " + value);
     }
 
 
@@ -75,5 +91,41 @@ public class Shapes {
         int breadth = scanner.nextInt();
 
         return ap == 1 ? 2 * (length + breadth) : length * breadth;
+    }
+
+    private static double pentagon(int ap) {
+
+        shape = "Pentagon";
+
+        System.out.print("Enter the length of the side : ");
+        int side = scanner.nextInt();
+
+        return ap == 1 ? 5 * side : 1.720 * side * side;
+    }
+
+
+    private static double hexagon(int ap) {
+        shape = "Hexagon";
+
+        System.out.print("Enter the length of the side : ");
+        int side = scanner.nextInt();
+
+        return ap == 1 ? 6 * side : 1.155 * side * side;
+    }
+
+
+    private static double octagon(int ap) {
+        shape = "Octagon";
+
+        System.out.print("Enter the length of the side : ");
+        int side = scanner.nextInt();
+
+        return ap == 1 ? 8 * side : 4.828 * side * side;
+    }
+
+
+    // Driver code
+    public static void main(String[] args) {
+        findShape();
     }
 }
