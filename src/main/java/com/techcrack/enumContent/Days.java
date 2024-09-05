@@ -12,7 +12,7 @@ public class Days {
     public static void main(String[] args) {
         Day day = Day.SUNDAY;
 
-        System.out.println(day);
+        //System.out.println(week);
 
         switch (day) {
             default:
