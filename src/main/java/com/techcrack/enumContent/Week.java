@@ -1,7 +1,7 @@
 package com.techcrack.enumContent;
 
 public enum Week {
-    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY;
 
     public static void main(String[] args) {
         Week day = Week.MONDAY;
