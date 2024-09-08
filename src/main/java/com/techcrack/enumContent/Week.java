@@ -1,22 +1,36 @@
 package com.techcrack.enumContent;
 
 public enum Week {
-    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY;
+
+    SUNDAY(10000.0), 
+    MONDAY(20000.00), 
+    TUESDAY(30000.00),
+    WEDNESDAY(40000.00),
+    THURSDAY(50000.00),
+    FRIDAY(60000.00),
+    SATURDAY(70000.00);
+
+    double salary = 0.0;
+
+    private Week(double salary) {
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Salary : " + salary;
+    }
 
     public static void main(String[] args) {
-        Week day = Week.MONDAY;
+        Week day = Week.SATURDAY;
+        
+        Week[] days = Week.values();
+    
 
-        String name = "Kavin";
+        for (Week week : days)
+            System.out.println(week);
 
-        switch (day) {
-            case MONDAY -> System.out.println("Its Monday " + name + " !!!");
-            case TUESDAY -> System.out.println("Its a Tuesday " + name + " !!!");
-            case WEDNESDAY -> System.out.println("Its a Wednesday " + name + " !!!");
-            case THURSDAY -> System.out.println("Its a Thursday " + name + " !!!");
-            case FRIDAY -> System.out.println("Its a Friday " + name + " !!!");
-            case SATURDAY -> System.out.println("Its a Saturday " + name + " !!!");
-            default -> System.out.println("Its a Monday " + name + " !!!");
-        }
-
+        System.out.println(day);
     }
+    
 }
