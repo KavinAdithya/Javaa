@@ -16,32 +16,55 @@ public class Validator {
             throw new IllegalArgumentException("Object Was Null..");
 
         Class<? extends User> userClass = user.getClass();
-        Field[] fields =  userClass.getDeclaredFields();
-        Field field1 = userClass.getDeclaredField("email");
-        for (Field field : fields)
-            //System.out.println(Arrays.toString(field.getAnnotations()));
-            System.out.println(field.getAnnotation(MinLength.class));
 
-        System.out.println(Arrays.toString(field1.getAnnotations()));
+        for (Field field : userClass.getDeclaredFields()) {
+
+            String value = findValue(findValue(field.getName()));
+
+//            if (!(field.getClass() instanceof String))
+
+            if (value.equals("No Attribute..."))
+                throw new ValidationException("Annotation are Not permitted for this variables...");
+
+            if (field.isAnnotationPresent(NotNull.class))
+                validateNull(field, value);
+            if (field.isAnnotationPresent(MaxLength.class))
+                validateMaximumLength(field, value);
+            if (field.isAnnotationPresent(MinLength.class))
+                validateMinimumLength(field, value);
+        }
     }
 
-    private void validateEmail(Field field) {
-        int minLength = field.getAnnotation(MinLength.class).minLength();
-        int maxLength = field.getAnnotation(MaxLength.class).maxLength();
-        String email = user.getEmail();
-
-        if (email.length() < minLength)
-            throw new ValidationException("Email length is too short...");
-        if (email.length() > maxLength)
-            throw new ValidationException("Email length is too large...");
-    }
-
-    private void validateUsername(Field field) {
+    private void validateNull(Field field, String value) {
         boolean isNull = field.getAnnotation(NotNull.class).isNull();
-        int minLength = field.getAnnotation(MinLength.class).minLength();
+
+        if (!isNull && value.isEmpty())
+            throw new ValidationException("Null Value Not Allowed...");
+
+    }
+
+    private void validateMaximumLength(Field field, String value) {
         int maxLength = field.getAnnotation(MaxLength.class).maxLength();
 
+        if (maxLength < value.length())
+            throw new ValidationException("Length is too long...");
 
+    }
+
+    private void validateMinimumLength(Field field, String value) {
+        int minLength = field.getAnnotation(MinLength.class).minLength();
+
+        if (minLength > value.length())
+            throw new ValidationException("Length id too short...");
+    }
+
+    private String findValue(String value) {
+        return switch (value) {
+          case "email" -> user.getEmail();
+          case "username" -> user.getName();
+          case "password" -> user.getPassword();
+            default -> "No Attribute...";
+        };
     }
 
     public static void main(String[] args) throws NoSuchFieldException {
