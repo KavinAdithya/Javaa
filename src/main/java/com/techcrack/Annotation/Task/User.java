@@ -3,7 +3,7 @@ package com.techcrack.Annotation.Task;
 public class User {
     @NotNull
     @MaxLength(maxLength = 12)
-    @MinLength(minLength = 6)
+    @MinLength(minLength = 4)
     private String name;
 
     @NotNull
